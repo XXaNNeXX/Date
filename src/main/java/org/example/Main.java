@@ -1,6 +1,7 @@
 package org.example;
 
 import java.time.*;
+import java.time.temporal.ChronoUnit;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,5 +33,7 @@ public class Main {
         Animal dog = new Animal(LocalDate.parse("2023-09-29"), "Dog");
         Period daysUntilBirthday = Period.between(LocalDate.now(), dog.getBirthday());
         System.out.println(daysUntilBirthday);
+        long daysUntilBirthday2 = ChronoUnit.DAYS.between(LocalDate.now(), dog.getBirthday());
+        System.out.println(daysUntilBirthday2);
     }
 }
